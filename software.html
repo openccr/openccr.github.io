@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software — openCCR</title>
+  <meta name="description" content="openCCR firmware and software: modular firmware architecture, sensor fusion, PO₂ control, and dive computer integration.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+        <span class="open">open</span><span class="ccr">CCR</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="hardware.html">Hardware</a></li>
+        <li><a href="software.html" class="active">Software</a></li>
+        <li><a href="api.html">API</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <button class="nav__hamburger" id="nav-hamburger"
+              aria-expanded="false" aria-controls="nav-mobile"
+              aria-label="Toggle mobile menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             aria-hidden="true">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="nav-mobile" role="navigation" aria-label="Mobile navigation">
+    <ul class="nav__mobile-links" role="list">
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="software.html" class="active">Software</a></li>
+      <li><a href="api.html">API</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="shop.html">Shop</a></li>
+    </ul>
+  </div>
+
+  <main class="page-content">
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="container page-hero__inner">
+        <p class="page-hero__eyebrow">Software</p>
+        <h1 class="page-hero__title">Firmware &amp; Libraries</h1>
+        <p class="page-hero__subtitle">
+          Modular firmware for microcontrollers. Sensor fusion, PO₂ control loops,
+          alarm logic, and dive computer integration.
+        </p>
+      </div>
+    </div>
+
+    <!-- Architecture -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Architecture</p>
+          <h2 class="section-header__title">Firmware Overview</h2>
+          <p class="section-header__subtitle">
+            Layered, hardware-agnostic design targeting embedded microcontrollers.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>Architecture Diagram</h3>
+          <p>Layer diagram and module dependency map coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flashing Guide -->
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Getting Started</p>
+          <h2 class="section-header__title">Flashing Guide</h2>
+          <p class="section-header__subtitle">
+            Build toolchain setup, flashing procedure, and first-boot verification.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>Flashing Documentation</h3>
+          <p>Toolchain setup and flashing instructions coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Modules</p>
+          <h2 class="section-header__title">Firmware Modules</h2>
+          <p class="section-header__subtitle">
+            Discrete modules for sensor drivers, control loops, logging, and UI.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                <path d="M4.93 4.93a10 10 0 0 0 0 14.14"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Sensor Fusion</h3>
+            <p class="card__body">
+              Multi-cell O₂ voting logic, temperature compensation, and sensor health monitoring.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3 class="card__title">PO₂ Control Loop</h3>
+            <p class="card__body">
+              Closed-loop solenoid control with configurable setpoint, hysteresis, and failsafe thresholds.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M18 20V10M12 20V4M6 20v-6"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Data Logging</h3>
+            <p class="card__body">
+              Dive log recording with configurable sample rate, storage backends, and export formats.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+            <span class="open">open</span><span class="ccr">CCR</span>
+          </a>
+          <p class="footer__tagline">
+            An open source framework for closed circuit rebreather hardware
+            and software development.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="hardware.html">Hardware</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="api.html">API Reference</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="community.html">Contributing</a></li>
+            <li><a href="https://github.com/openccr" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="community.html#safety">Safety Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="community.html#license">License</a></li>
+            <li><a href="community.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 openCCR contributors. Licensed under CERN-OHL-S and MIT.</span>
+        <span>Not certified for diving. Use at your own risk.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

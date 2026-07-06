@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>openCCR — Open Framework for Closed Circuit Rebreathers</title>
+  <meta name="description" content="openCCR is an open source framework for closed circuit rebreathers. Hardware designs, firmware, and protocols for technical divers and engineers.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+        <span class="open">open</span><span class="ccr">CCR</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="hardware.html">Hardware</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="api.html">API</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <button class="nav__hamburger" id="nav-hamburger"
+              aria-expanded="false" aria-controls="nav-mobile"
+              aria-label="Toggle mobile menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             aria-hidden="true">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="nav-mobile" role="navigation" aria-label="Mobile navigation">
+    <ul class="nav__mobile-links" role="list">
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="software.html">Software</a></li>
+      <li><a href="api.html">API</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="shop.html">Shop</a></li>
+    </ul>
+  </div>
+
+  <main class="page-content">
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                 aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v4l3 3"/>
+            </svg>
+            Open Source · CCR Framework
+          </div>
+          <h1 class="hero__title">Open framework for closed circuit rebreathers.</h1>
+          <p class="hero__tagline">Build. Dive. Contribute.</p>
+          <p class="hero__subtitle">
+            A community-driven hardware and software platform for technical divers, engineers,
+            and developers building safer, more capable rebreather systems.
+          </p>
+          <div class="hero__actions">
+            <a href="hardware.html" class="btn btn--primary btn--lg">Get Started</a>
+            <a href="https://github.com/openccr" class="btn btn--outline btn--lg"
+               target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SAFETY WARNING ========== -->
+    <section class="section" style="padding-block: var(--space-8);">
+      <div class="container">
+        <div class="safety-warning">
+          <svg class="safety-warning__icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9"  x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <div class="safety-warning__content">
+            <div class="safety-warning__title">Safety Notice</div>
+            <p class="safety-warning__text">
+              Rebreathers are life-support equipment. Improper construction, configuration, or use
+              can result in serious injury or death. This project is for educational and research
+              purposes. Always dive with properly certified, commercially validated equipment.
+              Never dive prototype hardware without expert supervision and appropriate training.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURE CARDS ========== -->
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Platform Overview</p>
+          <h2 class="section-header__title">Everything you need to build a CCR</h2>
+          <p class="section-header__subtitle">
+            From schematics to firmware, openCCR covers the full stack of closed circuit
+            rebreather development.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <a href="hardware.html" class="feature-card">
+            <div>
+              <div class="feature-card__label">Hardware</div>
+              <div class="feature-card__title">Reference Designs</div>
+            </div>
+            <p class="feature-card__desc">
+              Open schematics, bill of materials, and PCB layouts for sensor boards,
+              controllers, and display modules.
+            </p>
+            <span class="feature-card__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="software.html" class="feature-card">
+            <div>
+              <div class="feature-card__label">Software</div>
+              <div class="feature-card__title">Firmware &amp; Libraries</div>
+            </div>
+            <p class="feature-card__desc">
+              Modular firmware architecture for microcontrollers. Sensor fusion,
+              PO₂ control loops, and dive computer integration.
+            </p>
+            <span class="feature-card__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="api.html" class="feature-card">
+            <div>
+              <div class="feature-card__label">API</div>
+              <div class="feature-card__title">Protocol Reference</div>
+            </div>
+            <p class="feature-card__desc">
+              Documented data protocols, serial interfaces, and extension APIs for building
+              compatible accessories and integrations.
+            </p>
+            <span class="feature-card__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="community.html" class="feature-card">
+            <div>
+              <div class="feature-card__label">Community</div>
+              <div class="feature-card__title">Contribute &amp; Discuss</div>
+            </div>
+            <p class="feature-card__desc">
+              Join engineers and divers. Review open issues, submit pull requests,
+              and discuss design decisions.
+            </p>
+            <span class="feature-card__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="shop.html" class="feature-card">
+            <div>
+              <div class="feature-card__label">Shop</div>
+              <div class="feature-card__title">Kits &amp; Components</div>
+            </div>
+            <p class="feature-card__desc">
+              Pre-sourced component kits, tested sensor boards, and display assemblies
+              to get your build started faster.
+            </p>
+            <span class="feature-card__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <div class="feature-card" style="border-style: dashed; opacity: 0.65; cursor: default;">
+            <div>
+              <div class="feature-card__label">Coming Soon</div>
+              <div class="feature-card__title">Simulation</div>
+            </div>
+            <p class="feature-card__desc">
+              Software-in-the-loop simulation for testing firmware and control algorithms
+              without hardware.
+            </p>
+            <span class="feature-card__arrow" aria-hidden="true"
+                  style="color: var(--color-border);">→</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DESIGN PRINCIPLES ========== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Design Principles</p>
+          <h2 class="section-header__title">Built for safety-critical systems</h2>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Safety First</h3>
+            <p class="card__body">
+              All designs prioritize fail-safe behavior. Sensor redundancy, hardware watchdogs,
+              and defensive firmware patterns are core requirements, not afterthoughts.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Open by Default</h3>
+            <p class="card__body">
+              Hardware designs, firmware source code, and documentation are fully open.
+              No proprietary black boxes in life-support systems.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Modular Architecture</h3>
+            <p class="card__body">
+              Layered hardware and software modules. Swap sensor types, controller boards,
+              or display units without redesigning the entire system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+            <span class="open">open</span><span class="ccr">CCR</span>
+          </a>
+          <p class="footer__tagline">
+            An open source framework for closed circuit rebreather hardware
+            and software development.
+          </p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="hardware.html">Hardware</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="api.html">API Reference</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="community.html">Contributing</a></li>
+            <li><a href="https://github.com/openccr" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="community.html#safety">Safety Guidelines</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="community.html#license">License</a></li>
+            <li><a href="community.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 openCCR contributors. Licensed under CERN-OHL-S and MIT.</span>
+        <span>Not certified for diving. Use at your own risk.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

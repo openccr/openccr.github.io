@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Reference — openCCR</title>
+  <meta name="description" content="openCCR API reference: data protocols, serial interfaces, and extension APIs for compatible accessories and software.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+        <span class="open">open</span><span class="ccr">CCR</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="hardware.html">Hardware</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="api.html" class="active">API</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <button class="nav__hamburger" id="nav-hamburger"
+              aria-expanded="false" aria-controls="nav-mobile"
+              aria-label="Toggle mobile menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             aria-hidden="true">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="nav-mobile" role="navigation" aria-label="Mobile navigation">
+    <ul class="nav__mobile-links" role="list">
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="software.html">Software</a></li>
+      <li><a href="api.html" class="active">API</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="shop.html">Shop</a></li>
+    </ul>
+  </div>
+
+  <main class="page-content">
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="container page-hero__inner">
+        <p class="page-hero__eyebrow">API</p>
+        <h1 class="page-hero__title">Protocol Reference</h1>
+        <p class="page-hero__subtitle">
+          Documented data protocols, serial interfaces, and extension APIs for building
+          compatible accessories, surface displays, and dive planning integrations.
+        </p>
+      </div>
+    </div>
+
+    <!-- Serial Protocol -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Communication</p>
+          <h2 class="section-header__title">Serial Data Protocol</h2>
+          <p class="section-header__subtitle">
+            Binary frame format, baud rates, and message types for the controller bus.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>Protocol Specification</h3>
+          <p>Frame format tables, message type registry, and example packets coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Extension API -->
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Extensions</p>
+          <h2 class="section-header__title">Extension API</h2>
+          <p class="section-header__subtitle">
+            Register custom sensor modules, alarm handlers, and display adapters.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>Extension API Documentation</h3>
+          <p>Module registration interface and callback signatures coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Formats -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Data</p>
+          <h2 class="section-header__title">Dive Log Format</h2>
+          <p class="section-header__subtitle">
+            Binary and JSON log schemas for dive data export and analysis tools.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>Log Schema</h3>
+          <p>Schema definitions and sample log files coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+            <span class="open">open</span><span class="ccr">CCR</span>
+          </a>
+          <p class="footer__tagline">
+            An open source framework for closed circuit rebreather hardware
+            and software development.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="hardware.html">Hardware</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="api.html">API Reference</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="community.html">Contributing</a></li>
+            <li><a href="https://github.com/openccr" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="community.html#safety">Safety Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="community.html#license">License</a></li>
+            <li><a href="community.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 openCCR contributors. Licensed under CERN-OHL-S and MIT.</span>
+        <span>Not certified for diving. Use at your own risk.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

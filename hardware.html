@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware — openCCR</title>
+  <meta name="description" content="openCCR hardware reference designs: schematics, BOM, PCB layouts, and build guides for CCR sensor boards and controllers.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+        <span class="open">open</span><span class="ccr">CCR</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="hardware.html" class="active">Hardware</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="api.html">API</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+      <button class="nav__hamburger" id="nav-hamburger"
+              aria-expanded="false" aria-controls="nav-mobile"
+              aria-label="Toggle mobile menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             aria-hidden="true">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="nav-mobile" role="navigation" aria-label="Mobile navigation">
+    <ul class="nav__mobile-links" role="list">
+      <li><a href="hardware.html" class="active">Hardware</a></li>
+      <li><a href="software.html">Software</a></li>
+      <li><a href="api.html">API</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="shop.html">Shop</a></li>
+    </ul>
+  </div>
+
+  <main class="page-content">
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="container page-hero__inner">
+        <p class="page-hero__eyebrow">Hardware</p>
+        <h1 class="page-hero__title">Reference Designs</h1>
+        <p class="page-hero__subtitle">
+          Open schematics, bill of materials, PCB layouts, and build guides for
+          sensor boards, controller modules, and display units.
+        </p>
+      </div>
+    </div>
+
+    <!-- Safety Warning -->
+    <section class="section" style="padding-block: var(--space-8);">
+      <div class="container">
+        <div class="safety-warning">
+          <svg class="safety-warning__icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9"  x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <div class="safety-warning__content">
+            <div class="safety-warning__title">Safety Notice</div>
+            <p class="safety-warning__text">
+              These designs are research references. Any hardware built from these plans
+              is not certified for diving use. All prototype hardware must be independently
+              validated before use in any dive context.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOM / Schematics placeholder -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Bill of Materials</p>
+          <h2 class="section-header__title">Core Components</h2>
+          <p class="section-header__subtitle">
+            Curated component lists for the openCCR reference platform.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>BOM &amp; Schematics</h3>
+          <p>Component tables, part numbers, and schematic downloads coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PCB Layouts placeholder -->
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">PCB Designs</p>
+          <h2 class="section-header__title">Sensor &amp; Controller Boards</h2>
+          <p class="section-header__subtitle">
+            KiCad project files, Gerbers, and fabrication notes.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>PCB Files</h3>
+          <p>Board layouts and fabrication guides coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Build Guide placeholder -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Assembly</p>
+          <h2 class="section-header__title">Build Guide</h2>
+          <p class="section-header__subtitle">
+            Step-by-step assembly instructions with photos and test procedures.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>Assembly Documentation</h3>
+          <p>Build guide with verification procedures coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+            <span class="open">open</span><span class="ccr">CCR</span>
+          </a>
+          <p class="footer__tagline">
+            An open source framework for closed circuit rebreather hardware
+            and software development.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="hardware.html">Hardware</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="api.html">API Reference</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="community.html">Contributing</a></li>
+            <li><a href="https://github.com/openccr" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="community.html#safety">Safety Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="community.html#license">License</a></li>
+            <li><a href="community.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 openCCR contributors. Licensed under CERN-OHL-S and MIT.</span>
+        <span>Not certified for diving. Use at your own risk.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

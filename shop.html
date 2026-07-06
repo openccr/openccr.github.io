@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — openCCR</title>
+  <meta name="description" content="openCCR shop: hardware kits, sensor boards, and components for building your own CCR electronics.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+        <span class="open">open</span><span class="ccr">CCR</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="hardware.html">Hardware</a></li>
+        <li><a href="software.html">Software</a></li>
+        <li><a href="api.html">API</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+      </ul>
+      <button class="nav__hamburger" id="nav-hamburger"
+              aria-expanded="false" aria-controls="nav-mobile"
+              aria-label="Toggle mobile menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             aria-hidden="true">
+          <line x1="3" y1="6"  x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="nav-mobile" role="navigation" aria-label="Mobile navigation">
+    <ul class="nav__mobile-links" role="list">
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="software.html">Software</a></li>
+      <li><a href="api.html">API</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+    </ul>
+  </div>
+
+  <main class="page-content">
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="container page-hero__inner">
+        <p class="page-hero__eyebrow">Shop</p>
+        <h1 class="page-hero__title">Kits &amp; Components</h1>
+        <p class="page-hero__subtitle">
+          Pre-sourced component kits, tested sensor boards, and display assemblies
+          to accelerate your openCCR build.
+        </p>
+      </div>
+    </div>
+
+    <!-- Safety Warning -->
+    <section class="section" style="padding-block: var(--space-8);">
+      <div class="container">
+        <div class="safety-warning">
+          <svg class="safety-warning__icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9"  x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <div class="safety-warning__content">
+            <div class="safety-warning__title">Not for Diving Use</div>
+            <p class="safety-warning__text">
+              Components and kits sold here are for research and development purposes only.
+              None of these items are certified for use in life-support or diving equipment.
+              Assembly and integration is your responsibility. Never use prototype electronics
+              in a dive context without independent expert validation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kits -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Kits</p>
+          <h2 class="section-header__title">Component Kits</h2>
+          <p class="section-header__subtitle">
+            Curated kits with matched, tested components for the openCCR reference platform.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>Kit Listings</h3>
+          <p>Sensor kits, controller starter packs, and display module assemblies coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Individual Components -->
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Components</p>
+          <h2 class="section-header__title">Individual Parts</h2>
+          <p class="section-header__subtitle">
+            O₂ cells, solenoids, sensors, and connectors individually sourced and tested.
+          </p>
+        </div>
+        <div class="placeholder-block">
+          <h3>Component Listings</h3>
+          <p>Individual component listings coming soon.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__wordmark" aria-label="openCCR home">
+            <span class="open">open</span><span class="ccr">CCR</span>
+          </a>
+          <p class="footer__tagline">
+            An open source framework for closed circuit rebreather hardware
+            and software development.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="hardware.html">Hardware</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="api.html">API Reference</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="community.html">Contributing</a></li>
+            <li><a href="https://github.com/openccr" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="community.html#safety">Safety Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="community.html#license">License</a></li>
+            <li><a href="community.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 openCCR contributors. Licensed under CERN-OHL-S and MIT.</span>
+        <span>Not certified for diving. Use at your own risk.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
