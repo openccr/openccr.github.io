@@ -88,18 +88,133 @@
     </section>
 
     <!-- Contributing -->
-    <section class="section">
+    <section id="contributing" class="section">
       <div class="container">
         <div class="section-header">
           <p class="section-header__eyebrow">Contributing</p>
           <h2 class="section-header__title">How to Contribute</h2>
           <p class="section-header__subtitle">
             From bug reports to hardware schematics — all contributions welcome.
+            Read the full <a href="https://github.com/openccr/openccr.github.io/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> before opening a PR.
           </p>
         </div>
-        <div class="placeholder-block">
-          <h3>Contribution Guide</h3>
-          <p>CONTRIBUTING.md, code of conduct, and PR workflow coming soon.</p>
+
+        <!-- CLA Notice -->
+        <div style="border: 2px solid var(--color-ocean); border-radius: var(--radius-md); padding: var(--space-4) var(--space-6); background: rgba(14, 107, 173, 0.04); margin-bottom: var(--space-8);">
+          <div style="font-family: var(--font-heading); font-size: var(--text-base); font-weight: 700; color: var(--color-navy); margin-bottom: var(--space-2);">
+            Contributor License Agreement (CLA)
+          </div>
+          <p style="font-size: var(--text-sm); color: var(--color-text); margin-bottom: var(--space-3);">
+            openCCR operates a dual-licensing model to fund ongoing development and ISO standardization.
+            By submitting a Pull Request, issue, or any contribution to this project, you agree that:
+          </p>
+          <ol style="font-size: var(--text-sm); color: var(--color-text); padding-left: var(--space-6); margin-bottom: var(--space-3);">
+            <li>Your contribution is governed by the <a href="CLA.md">openCCR Contributor License Agreement v1.0</a>.</li>
+            <li>You authorize the openCCR non-profit organization (and its authorized commercial partners) to utilize, modify, and dual-license your contributions without restriction.</li>
+          </ol>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin: 0;">
+            You will be prompted to sign automatically on your first Pull Request via the CLA bot. Unsigned PRs cannot be merged.
+            <a href="#cla" style="color: var(--color-ocean);">Read the full CLA →</a>
+          </p>
+        </div>
+
+        <!-- Steps -->
+        <div class="grid-3">
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="18" cy="18" r="3"/>
+                <circle cx="6" cy="6" r="3"/>
+                <path d="M13 6h3a2 2 0 0 1 2 2v7"/>
+                <path d="M11 18H8a2 2 0 0 1-2-2V9"/>
+              </svg>
+            </div>
+            <h3 class="card__title">1. Fork</h3>
+            <p class="card__body">Fork the relevant repository on GitHub and create a branch for your change.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <h3 class="card__title">2. Sign the CLA</h3>
+            <p class="card__body">The CLA bot will prompt you automatically on your first Pull Request. No manual steps needed.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="card__title">3. Add License Headers</h3>
+            <p class="card__body">Hardware files: <code>CERN-OHL-S-2.0</code>. Software files: <code>MIT</code> header. See CONTRIBUTING.md for exact format.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full CLA -->
+    <section id="cla" class="section section--subtle">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Legal</p>
+          <h2 class="section-header__title">Contributor License Agreement v1.0</h2>
+          <p class="section-header__subtitle">
+            Accepted automatically via CLA bot on your first Pull Request.
+            <a href="CLA.md">Download CLA.md</a>
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+
+          <div class="card">
+            <h3 class="card__title" style="font-size: var(--text-base);">1. Definitions</h3>
+            <p class="card__body">
+              "Contribution" means any source code, hardware schematics, CAD files, documentation,
+              or other material submitted by You to the Project.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title" style="font-size: var(--text-base);">2. Grant of Copyright License</h3>
+            <p class="card__body">
+              Subject to the terms and conditions of this Agreement, You hereby grant to the openCCR
+              Non-Profit Organization and its designated commercial entities a perpetual, worldwide,
+              non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce,
+              prepare derivative works of, publicly display, publicly perform, sublicense, and
+              distribute Your Contributions and such derivative works.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title" style="font-size: var(--text-base);">3. Explicit Right to Dual-License</h3>
+            <p class="card__body" style="margin-bottom: var(--space-3);">
+              You explicitly acknowledge and agree that the Project operating model relies on
+              dual-licensing. You grant the Project the unrestricted right to distribute Your
+              Contributions under any license terms chosen by the Project management, including
+              but not limited to:
+            </p>
+            <ol style="font-size: var(--text-sm); color: var(--color-text-muted); padding-left: var(--space-6); margin: 0;">
+              <li>Permissive open-source licenses (e.g., MIT, Apache 2.0).</li>
+              <li>Reciprocal copyleft open-source licenses (e.g., CERN-OHL-S, GPLv3).</li>
+              <li>Proprietary, closed-source commercial licenses granted to enterprise partners by the Project's commercial arm.</li>
+            </ol>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title" style="font-size: var(--text-base);">4. Entitlement to Contribute</h3>
+            <p class="card__body">
+              You represent that You are legally entitled to grant these licenses. If your employer
+              has rights to intellectual property you create, you represent that you have received
+              permission to make this Contribution.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -149,10 +264,68 @@
         <div class="section-header">
           <p class="section-header__eyebrow">License</p>
           <h2 class="section-header__title">Open Licenses</h2>
+          <p class="section-header__subtitle">
+            openCCR uses a dual-licensing model. Community use is fully open.
+            Commercial licenses are issued by the openCCR non-profit to fund development and ISO standardization.
+          </p>
         </div>
-        <div class="placeholder-block">
-          <h3>License Information</h3>
-          <p>Hardware: CERN-OHL-S v2. Firmware &amp; software: MIT. Documentation: CC BY 4.0. Full license texts coming soon.</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Hardware</h3>
+            <p class="card__body">
+              Schematics, PCB designs, and mechanical files are licensed under
+              <strong>CERN Open Hardware Licence v2 — Strongly Reciprocal (CERN-OHL-S-2.0)</strong>.
+              Derivatives must be released under the same terms.
+            </p>
+            <div class="card__footer">
+              <span class="badge badge--ocean">CERN-OHL-S-2.0</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Firmware &amp; Software</h3>
+            <p class="card__body">
+              All firmware, libraries, and software tools are licensed under the
+              <strong>MIT License</strong>. Permissive — use, modify, and redistribute with attribution.
+            </p>
+            <div class="card__footer">
+              <span class="badge badge--ocean">MIT</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Documentation</h3>
+            <p class="card__body">
+              All documentation and written content is licensed under
+              <strong>Creative Commons Attribution 4.0 International (CC BY 4.0)</strong>.
+              Share and adapt with attribution.
+            </p>
+            <div class="card__footer">
+              <span class="badge badge--ocean">CC BY 4.0</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
