@@ -50,12 +50,12 @@ Source: https://github.com/openccr/openccr-hardware
 SPDX-License-Identifier: CERN-OHL-S-2.0
 ```
 
-### Software / Firmware (MIT)
+### Software / Firmware (GPLv3)
 
 Add to all source files:
 
 ```
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Copyright (c) 2026 openCCR contributors
 ```
 
@@ -79,7 +79,7 @@ Open an issue on the relevant GitHub repository. For security-sensitive issues, 
 
 openCCR uses a dual-licensing model:
 
-- **Open license** (CERN-OHL-S / MIT / CC BY 4.0) — for community use, research, and non-commercial builds.
+- **Open license** (CERN-OHL-S / GPLv3 / CC BY 4.0) — for community use, research, and non-commercial builds.
 - **Commercial license** — available to commercial partners through the openCCR non-profit, funding continued development and ISO standardization work.
 
 The CLA enables the non-profit to issue commercial licenses without requiring permission from every contributor individually. This is standard practice for open-source projects with a non-profit steward (examples: Eclipse Foundation, Linux kernel).
