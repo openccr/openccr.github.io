@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>API Reference — openCCR</title>
-  <meta name="description" content="openCCR API reference: data protocols, serial interfaces, and extension APIs for compatible accessories and software.">
+  <meta name="description" content="openCCR API and protocol reference: CCRAN inter-board communication protocol, companion app API, dive log formats, and integration guides from openccr/docs.">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM90FH107W"></script>
   <script>
@@ -70,53 +70,179 @@
       </div>
     </div>
 
-    <!-- Serial Protocol -->
+    <!-- CCRAN Protocol -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <p class="section-header__eyebrow">Communication</p>
-          <h2 class="section-header__title">Serial Data Protocol</h2>
+          <p class="section-header__eyebrow">Inter-Board Communication</p>
+          <h2 class="section-header__title">CCRAN — CCR-Area-Network</h2>
           <p class="section-header__subtitle">
-            Binary frame format, baud rates, and message types for the controller bus.
+            CCRAN is not an industry standard — it is an openCCR community effort to define
+            a CAN-bus-based communication layer that makes rebreather electronics truly
+            interoperable. Any vendor can build a board that speaks CCRAN and plug it into
+            an openCCR system. The specification is developed openly in
+            <a href="https://github.com/openccr/docs" target="_blank" rel="noopener noreferrer">openccr/docs</a>
+            and governed by the community.
           </p>
         </div>
-        <div class="placeholder-block">
-          <h3>Protocol Specification</h3>
-          <p>Frame format tables, message type registry, and example packets coming soon.</p>
+        <div class="grid-3" style="margin-bottom: var(--space-8);">
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Why CCRAN?</h3>
+            <p class="card__body">Most rebreather electronics use proprietary internal buses, meaning sensors and displays from different builders are incompatible by default. CCRAN exists to change that. It is an openCCR community initiative to define a shared, open communication standard for rebreather modules — so that any CCRAN-compatible board, from any builder, can participate in the same system.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                <line x1="6" y1="6" x2="6.01" y2="6"/>
+                <line x1="6" y1="18" x2="6.01" y2="18"/>
+              </svg>
+            </div>
+            <h3 class="card__title">CAN Bus Foundation</h3>
+            <p class="card__body">CCRAN is built on CAN bus, a differential serial standard proven in automotive and industrial applications. CAN provides inherent noise immunity, multi-node addressing, and hardware-level error detection — properties that make it well-suited for safety-critical embedded systems. Precise electrical parameters such as baud rate, termination, and topology are being defined in the community specification.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Open Message Registry</h3>
+            <p class="card__body">Above the physical layer, CCRAN defines a message format and an open registry of message types — the shared vocabulary boards use to exchange oxygen readings, control commands, alarm events, display updates, and diagnostic data. The registry is community-governed: any contributor can propose new message types for new device categories, with the full registry maintained in openccr/docs.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Safety &amp; Fault Tolerance</h3>
+            <p class="card__body">Because rebreathers are life-support equipment, the CCRAN specification will define how the system behaves when nodes fail: how faults are detected, how alarms are broadcast across surviving nodes, and how the system degrades gracefully. These safety behaviours are as much a part of the standard as the frame format, and will be developed through community review and open discussion.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Build Your Own Compatible Hardware</h3>
+            <p class="card__body">Any hardware developer can build a CCRAN-compatible board. The specification will define exactly what a conforming node must implement: how to join the bus, how to register its capabilities, and how to exchange data with the rest of the system. Reference implementations and integration guides are maintained in openccr/docs to make third-party development straightforward.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Work in Progress</h3>
+            <p class="card__body">CCRAN is actively being specified. The community is working through physical layer parameters, frame formats, addressing schemes, and the initial message type registry. If you build rebreather electronics or safety-critical embedded systems and want to help shape the standard, contributions are welcome in the openccr/docs repository.</p>
+          </div>
         </div>
+        <a href="https://github.com/openccr/docs" target="_blank" rel="noopener noreferrer"
+           class="btn btn--primary">Read the CCRAN Specification in openccr/docs</a>
       </div>
     </section>
 
-    <!-- Extension API -->
+    <!-- Companion App API -->
     <section class="section section--subtle">
       <div class="container">
         <div class="section-header">
-          <p class="section-header__eyebrow">Extensions</p>
-          <h2 class="section-header__title">Extension API</h2>
+          <p class="section-header__eyebrow">Repository — openccr/docs</p>
+          <h2 class="section-header__title">Documentation &amp; API Reference</h2>
           <p class="section-header__subtitle">
-            Register custom sensor modules, alarm handlers, and display adapters.
+            The <code>openccr/docs</code> repository is the authoritative source for all
+            openCCR documentation: protocol specifications, integration guides, safety analysis,
+            and the companion app API. Licensed under CC BY 4.0.
           </p>
         </div>
-        <div class="placeholder-block">
-          <h3>Extension API Documentation</h3>
-          <p>Module registration interface and callback signatures coming soon.</p>
+        <div class="grid-3" style="margin-bottom: var(--space-8);">
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <h3 class="card__title">CCRAN Protocol Specification</h3>
+            <p class="card__body">Full normative specification for the CCR-Area-Network protocol. Covers physical layer, frame format, message type registry, addressing scheme, timing requirements, fault detection, and bus recovery procedures. Includes worked examples and oscilloscope waveform references.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                <path d="M12 18h.01"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Companion App API</h3>
+            <p class="card__body">Command protocol used between the companion app and the openCCR device over BLE. Documents all configuration read/write commands, calibration procedures, log transfer protocol, and firmware update sequence. Enables third-party app developers to build compatible tooling.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Safety Analysis (FMEA)</h3>
+            <p class="card__body">Failure Mode and Effects Analysis documents for each subsystem. Identifies single-point failures, their effects on diver safety, detection mechanisms, and mitigations applied in hardware and firmware. Required reading before modifying sensor, control, or alarm subsystems.</p>
+          </div>
         </div>
+        <a href="https://github.com/openccr/docs" target="_blank" rel="noopener noreferrer"
+           class="btn btn--primary">View openccr/docs on GitHub</a>
       </div>
     </section>
 
-    <!-- Data Formats -->
+    <!-- Dive Log Format -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <p class="section-header__eyebrow">Data</p>
-          <h2 class="section-header__title">Dive Log Format</h2>
+          <p class="section-header__eyebrow">Data Formats</p>
+          <h2 class="section-header__title">Dive Log Schema</h2>
           <p class="section-header__subtitle">
-            Binary and JSON log schemas for dive data export and analysis tools.
+            openCCR log files are transferred from the device via the companion app and
+            exported in three formats. Schema definitions are in openccr/docs.
           </p>
         </div>
-        <div class="placeholder-block">
-          <h3>Log Schema</h3>
-          <p>Schema definitions and sample log files coming soon.</p>
+        <div class="grid-3">
+          <div class="card">
+            <h3 class="card__title">openCCR Binary</h3>
+            <p class="card__body">Native on-device format. Fixed-width records at the configured sample rate. Each record: 4-byte Unix timestamp, 2-byte depth (cm), 3× 2-byte cell millivolts, 2-byte voted PO₂ (mbar), 1-byte setpoint (mbar × 10), 1-byte solenoid state, 1-byte alarm bitmask, 1-byte temperature (°C + 40 offset). Records are appended sequentially; the log header contains device ID, firmware version, and calibration constants.</p>
+            <div class="card__footer"><span class="badge badge--navy">.olog</span></div>
+          </div>
+          <div class="card">
+            <h3 class="card__title">CSV Export</h3>
+            <p class="card__body">Human-readable comma-separated export generated by the companion app from the binary log. Column headers match the binary record fields. Suitable for import into spreadsheet tools and Python/R analysis environments. Includes a metadata header block with dive summary statistics (max depth, bottom time, min/max PO₂, alarm count).</p>
+            <div class="card__footer"><span class="badge badge--navy">.csv</span></div>
+          </div>
+          <div class="card">
+            <h3 class="card__title">UDDF Export</h3>
+            <p class="card__body">Universal Dive Data Format export for compatibility with third-party dive log software (Subsurface, DiveLog, MacDive). Maps openCCR log fields to the UDDF 3.2.2 schema. PO₂ readings are stored in the <code>&lt;mixchange&gt;</code> and <code>&lt;setpoint&gt;</code> elements per the UDDF rebreather dive profile specification.</p>
+            <div class="card__footer"><span class="badge badge--navy">.uddf</span></div>
+          </div>
         </div>
       </div>
     </section>

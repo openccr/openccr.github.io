@@ -70,51 +70,21 @@
       </div>
     </div>
 
-    <!-- Architecture -->
+    <!-- openccr/firmware -->
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <p class="section-header__eyebrow">Architecture</p>
-          <h2 class="section-header__title">Firmware Overview</h2>
+          <p class="section-header__eyebrow">Repository — openccr/firmware</p>
+          <h2 class="section-header__title">Embedded Firmware</h2>
           <p class="section-header__subtitle">
-            Layered, hardware-agnostic design targeting embedded microcontrollers.
+            Embedded C/C++ firmware for the openCCR controller board, built on Zephyr RTOS and
+            the Nordic nRF SDK. Modular architecture designed for safety-critical embedded
+            systems. Licensed under GPLv3.
           </p>
         </div>
-        <div class="placeholder-block">
-          <h3>Architecture Diagram</h3>
-          <p>Layer diagram and module dependency map coming soon.</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Flashing Guide -->
-    <section class="section section--subtle">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-header__eyebrow">Getting Started</p>
-          <h2 class="section-header__title">Flashing Guide</h2>
-          <p class="section-header__subtitle">
-            Build toolchain setup, flashing procedure, and first-boot verification.
-          </p>
-        </div>
-        <div class="placeholder-block">
-          <h3>Flashing Documentation</h3>
-          <p>Toolchain setup and flashing instructions coming soon.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modules -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-header__eyebrow">Modules</p>
-          <h2 class="section-header__title">Firmware Modules</h2>
-          <p class="section-header__subtitle">
-            Discrete modules for sensor drivers, control loops, logging, and UI.
-          </p>
-        </div>
-        <div class="grid-3">
+        <!-- Firmware modules -->
+        <div class="grid-3" style="margin-bottom: var(--space-8);">
           <div class="card">
             <div class="card__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -124,10 +94,8 @@
                 <path d="M4.93 4.93a10 10 0 0 0 0 14.14"/>
               </svg>
             </div>
-            <h3 class="card__title">Sensor Fusion</h3>
-            <p class="card__body">
-              Multi-cell O₂ voting logic, temperature compensation, and sensor health monitoring.
-            </p>
+            <h3 class="card__title">PO₂ Sensor Fusion</h3>
+            <p class="card__body">Multi-cell voting algorithm with statistical outlier rejection. Continuous cell health scoring — degraded or failed cells are flagged and excluded from the voted value with appropriate alarms.</p>
           </div>
           <div class="card">
             <div class="card__icon" aria-hidden="true">
@@ -137,23 +105,133 @@
               </svg>
             </div>
             <h3 class="card__title">PO₂ Control Loop</h3>
-            <p class="card__body">
-              Closed-loop solenoid control with configurable setpoint, hysteresis, and failsafe thresholds.
-            </p>
+            <p class="card__body">Closed-loop solenoid actuation maintaining the configured PO₂ setpoint. Configurable dead-band, hysteresis, and maximum injection duration prevent over-oxygenation. Automatic depth-based setpoint changeover between low (descent) and high (bottom) setpoints. Hardware watchdog ensures fail-safe solenoid shutoff.</p>
           </div>
           <div class="card">
             <div class="card__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                    stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M18 20V10M12 20V4M6 20v-6"/>
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
               </svg>
             </div>
-            <h3 class="card__title">Data Logging</h3>
-            <p class="card__body">
-              Dive log recording with configurable sample rate, storage backends, and export formats.
-            </p>
+            <h3 class="card__title">Alarm Management</h3>
+            <p class="card__body">Tiered alarm system with severity levels: advisory, warning, and critical. Alarm events are broadcast over CCRAN to HUD, display, and alert boards for audio, optical, and haptic signalling. Alarm conditions include high PO₂, low PO₂, cell failure, cell disagreement, low battery, and CCRAN bus fault.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Dive Log Recording</h3>
+            <p class="card__body">Continuous recording to on-board flash at configurable sample rates (1–10 Hz). Each record includes timestamp, depth, voted PO₂, per-cell readings, setpoint, solenoid state, and active alarms. Log exported via BLE to the companion app in binary, CSV, or UDDF format.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                <line x1="12" y1="20" x2="12.01" y2="20"/>
+              </svg>
+            </div>
+            <h3 class="card__title">CCRAN Stack</h3>
+            <p class="card__body">Full implementation of the openCCR inter-board communication protocol. Bus master on the controller board coordinates sensor polling, display updates, and solenoid commands to peripheral boards. Built-in error detection with automatic retry and bus fault recovery. See the <a href="api.html">API page</a> for protocol details.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <polyline points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Bluetooth Stack</h3>
+            <p class="card__body">BLE communication stack for wireless connectivity with the companion app. Handles pairing, secure data transfer, dive log export, configuration reads and writes, and over-the-air firmware updates. Built on the Zephyr BLE host stack targeting the nRF52/nRF54 radio peripherals.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Firmware Update</h3>
+            <p class="card__body">Secure bootloader supporting over-the-air firmware updates via BLE from the companion app and over CCRAN for peripheral boards. Update images are checked before flashing, and previous firmware is retained in a recovery partition for rollback on failed update.</p>
           </div>
         </div>
+        <a href="https://github.com/openccr/firmware" target="_blank" rel="noopener noreferrer"
+           class="btn btn--primary">View openccr/firmware on GitHub</a>
+      </div>
+    </section>
+
+    <!-- openccr/companion-app -->
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Repository — openccr/companion-app</p>
+          <h2 class="section-header__title">Companion Application</h2>
+          <p class="section-header__subtitle">
+            Flutter-based application for iOS and Android. Connects wirelessly over Bluetooth to
+            the openCCR device, giving divers a familiar, touch-friendly screen to configure
+            the system, review dive logs, and push firmware updates — all before or after the
+            dive. Licensed under GPLv3.
+          </p>
+        </div>
+        <div class="grid-2" style="margin-bottom: var(--space-8);">
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Pre-Dive Configuration</h3>
+            <p class="card__body">Connect to the openCCR unit via Bluetooth Low Energy to configure: PO₂ setpoints for low and high depth zones, depth-based setpoint changeover threshold, alarm level customisation (advisory, warning, and critical thresholds for high and low PO₂), cell type and calibration constants, and system clock synchronisation. All settings are checked against acceptable ranges before being written to the device — out-of-range values are rejected with a descriptive error.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Cell Calibration Wizard</h3>
+            <p class="card__body">Guided step-by-step calibration procedure: flush the breathing loop with pure O₂ at a known partial pressure, confirm stable sensor readings across all three cells, enter the reference PO₂ value, and commit the calibration constants. The wizard displays live millivolt readings per cell during the flush, flags cells with excessive drift or noise, and records calibration date and reference value in the device log.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Dive Log Viewer</h3>
+            <p class="card__body">Graphical post-dive log review with interactive timeline charts: voted PO₂ trace with per-cell overlays, depth profile, solenoid actuation events, setpoint transitions, and alarm event markers. Supports pan and zoom. Exports logs in CSV (spreadsheet-compatible), UDDF (dive computer interchange format), and openCCR native binary. Multiple dives can be compared on a single chart.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <polyline points="16 16 12 12 8 16"/>
+                <line x1="12" y1="12" x2="12" y2="21"/>
+                <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Firmware Updates</h3>
+            <p class="card__body">Push firmware updates to the openCCR controller wirelessly over BLE. The app checks the update image, displays a progress indicator during transfer, and confirms successful boot of the new firmware version. Supports rollback to the previous version if the device reports a failed update.</p>
+          </div>
+        </div>
+        <a href="https://github.com/openccr/companion-app" target="_blank" rel="noopener noreferrer"
+           class="btn btn--primary">View openccr/companion-app on GitHub</a>
       </div>
     </section>
 
