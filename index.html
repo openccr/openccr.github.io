@@ -27,6 +27,7 @@
       <ul class="nav__links" role="list">
         <li><a href="hardware.html">Hardware</a></li>
         <li><a href="software.html">Software</a></li>
+        <li><a href="/configurator">Configurator</a></li>
         <li><a href="api.html">API</a></li>
         <li><a href="community.html">Community</a></li>
         <li><a href="shop.html">Shop</a></li>
@@ -50,6 +51,7 @@
     <ul class="nav__mobile-links" role="list">
       <li><a href="hardware.html">Hardware</a></li>
       <li><a href="software.html">Software</a></li>
+      <li><a href="/configurator">Configurator</a></li>
       <li><a href="api.html">API</a></li>
       <li><a href="community.html">Community</a></li>
       <li><a href="shop.html">Shop</a></li>
@@ -110,6 +112,40 @@
       </div>
     </section>
 
+    <!-- ========== WHY / WHAT ========== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">About the Project</p>
+          <h2 class="section-header__title">What is the openCCR project?</h2>
+          <p class="section-header__subtitle">
+            Built by divers and engineers who wanted to see inside the black box.
+          </p>
+        </div>
+
+        <div class="grid-2" style="align-items: start; gap: var(--space-12);">
+          <div>
+            <p class="section-header__eyebrow">Why?</p>
+            <p>Rebreathers are powerful but opaque. Most divers treat them as black boxes — cells vote, solenoids fire, watchdogs run — but few know why or how. That opacity is a problem when the device is your life support. openCCR exists to change that.</p>
+            <ul>
+              <li><strong>Understand how it really works.</strong> Trace every signal from O₂ sensor to solenoid actuation. Read the firmware. Study the schematics. Know your life-support equipment at circuit and software level, not just the operating manual level.</li>
+              <li><strong>Debunk the mystery.</strong> eCCR design is often treated as arcane knowledge. Open hardware and documented firmware make every design choice visible and reviewable by anyone willing to look.</li>
+              <li><strong>Harness the community.</strong> Technical divers, engineers, and hackers collectively find more failure modes and generate better ideas than any closed team. openCCR is a venue for those conversations and contributions.</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="section-header__eyebrow">What?</p>
+            <p>openCCR is not a product and not a certification programme. It is a learning, experimentation and innovation platform and a community reference design.</p>
+            <ul>
+              <li><strong>A project for tinkering, learning, and having fun.</strong> Build a sensor board. Flash the firmware. Break something on purpose and understand why. Modify the PO₂ control loop. Write a new alarm module. Fun and curiosity are the whole point.</li>
+              <li><strong>A reference design for the community.</strong> A well-documented, open baseline that any builder can fork, extend, critique, or simply read to understand how a serious CCR controller is built — from schematic to protocol specification.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ========== FEATURE CARDS ========== -->
     <section class="section section--subtle">
       <div class="container">
@@ -143,6 +179,18 @@
             <p class="feature-card__desc">
               Modular firmware architecture for microcontrollers. Sensor fusion,
               PO₂ control loops, and dive computer integration.
+            </p>
+            <span class="feature-card__arrow" aria-hidden="true">→</span>
+          </a>
+
+          <a href="/configurator" class="feature-card">
+            <div>
+              <div class="feature-card__label">Configurator</div>
+              <div class="feature-card__title">Visual Builder</div>
+            </div>
+            <p class="feature-card__desc">
+              Drag and drop openCCR boards and components to plan your build.
+              Explore module combinations interactively before ordering.
             </p>
             <span class="feature-card__arrow" aria-hidden="true">→</span>
           </a>

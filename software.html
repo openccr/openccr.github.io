@@ -27,6 +27,7 @@
       <ul class="nav__links" role="list">
         <li><a href="hardware.html">Hardware</a></li>
         <li><a href="software.html" class="active">Software</a></li>
+        <li><a href="/configurator">Configurator</a></li>
         <li><a href="api.html">API</a></li>
         <li><a href="community.html">Community</a></li>
         <li><a href="shop.html">Shop</a></li>
@@ -50,6 +51,7 @@
     <ul class="nav__mobile-links" role="list">
       <li><a href="hardware.html">Hardware</a></li>
       <li><a href="software.html" class="active">Software</a></li>
+      <li><a href="/configurator">Configurator</a></li>
       <li><a href="api.html">API</a></li>
       <li><a href="community.html">Community</a></li>
       <li><a href="shop.html">Shop</a></li>
@@ -70,8 +72,34 @@
       </div>
     </div>
 
+    <!-- Safety Warning -->
+    <section class="section" style="padding-block: var(--space-8);">
+      <div class="container">
+        <div class="safety-warning">
+          <svg class="safety-warning__icon" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+            <line x1="12" y1="9"  x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <div class="safety-warning__content">
+            <div class="safety-warning__title">Safety Notice</div>
+            <p class="safety-warning__text">
+              This firmware is for research and educational use only. Do not use this
+              software in any equipment intended for actual diving.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page body: content + floating TOC -->
+    <div class="page-with-toc">
+      <div class="page-with-toc__content">
+
     <!-- openccr/firmware -->
-    <section class="section">
+    <section class="section" id="embedded-firmware">
       <div class="container">
         <div class="section-header">
           <p class="section-header__eyebrow">Repository — openccr/firmware</p>
@@ -117,7 +145,7 @@
               </svg>
             </div>
             <h3 class="card__title">Alarm Management</h3>
-            <p class="card__body">Tiered alarm system with severity levels: advisory, warning, and critical. Alarm events are broadcast over CCRAN to HUD, display, and alert boards for audio, optical, and haptic signalling. Alarm conditions include high PO₂, low PO₂, cell failure, cell disagreement, low battery, and CCRAN bus fault.</p>
+            <p class="card__body">Tiered alarm system with severity levels: advisory, warning, and critical. Alarm events are broadcast over rebus to HUD, display, and alert boards for audio, optical, and haptic signalling. Alarm conditions include high PO₂, low PO₂, cell failure, cell disagreement, low battery, and rebus bus fault.</p>
           </div>
           <div class="card">
             <div class="card__icon" aria-hidden="true">
@@ -141,7 +169,7 @@
                 <line x1="12" y1="20" x2="12.01" y2="20"/>
               </svg>
             </div>
-            <h3 class="card__title">CCRAN Stack</h3>
+            <h3 class="card__title">rebus Stack</h3>
             <p class="card__body">Full implementation of the openCCR inter-board communication protocol. Bus master on the controller board coordinates sensor polling, display updates, and solenoid commands to peripheral boards. Built-in error detection with automatic retry and bus fault recovery. See the <a href="api.html">API page</a> for protocol details.</p>
           </div>
           <div class="card">
@@ -162,7 +190,17 @@
               </svg>
             </div>
             <h3 class="card__title">Firmware Update</h3>
-            <p class="card__body">Secure bootloader supporting over-the-air firmware updates via BLE from the companion app and over CCRAN for peripheral boards. Update images are checked before flashing, and previous firmware is retained in a recovery partition for rollback on failed update.</p>
+            <p class="card__body">Secure bootloader supporting over-the-air firmware updates via BLE from the companion app and over rebus for peripheral boards. Update images are checked before flashing, and previous firmware is retained in a recovery partition for rollback on failed update.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <polyline points="4 20 4 8 8 8 8 14 12 14 12 10 16 10 16 16 20 16 20 4"/>
+              </svg>
+            </div>
+            <h3 class="card__title">Decompression Algorithm</h3>
+            <p class="card__body">Bühlmann ZHL-16C tissue model with configurable gradient factors (GF Lo/Hi). Tracks inert gas loading across 16 parallel compartments using depth and time data from the pressure sensor board. Calculates no-stop time remaining, decompression ceilings, and stop durations. Results broadcast over rebus to display boards. GF settings configurable via the companion app.</p>
           </div>
         </div>
         <a href="https://github.com/openccr/firmware" target="_blank" rel="noopener noreferrer"
@@ -171,7 +209,7 @@
     </section>
 
     <!-- openccr/companion-app -->
-    <section class="section section--subtle">
+    <section class="section section--subtle" id="companion-app">
       <div class="container">
         <div class="section-header">
           <p class="section-header__eyebrow">Repository — openccr/companion-app</p>
@@ -234,6 +272,35 @@
            class="btn btn--primary">View openccr/companion-app on GitHub</a>
       </div>
     </section>
+
+    <!-- Configurator CTA -->
+    <section class="section" id="configurator">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-header__eyebrow">Tools</p>
+          <h2 class="section-header__title">Configure Your Hardware Stack</h2>
+          <p class="section-header__subtitle">
+            Before flashing firmware, use the visual configurator to lay out your
+            board configuration and verify module connections match your firmware build.
+          </p>
+        </div>
+        <a href="/configurator" class="btn btn--primary btn--lg">Open Configurator</a>
+      </div>
+    </section>
+
+      </div><!-- end page-with-toc__content -->
+
+      <!-- Floating TOC -->
+      <aside class="page-toc" aria-label="Page contents">
+        <p class="page-toc__label">On this page</p>
+        <ul class="page-toc__list">
+          <li><a href="#embedded-firmware">Embedded Firmware</a></li>
+          <li><a href="#companion-app">Companion App</a></li>
+          <li><a href="#configurator">Configurator</a></li>
+        </ul>
+      </aside>
+
+    </div><!-- end page-with-toc -->
 
   </main>
 

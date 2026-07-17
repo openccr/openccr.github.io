@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>API Reference — openCCR</title>
-  <meta name="description" content="openCCR API and protocol reference: CCRAN inter-board communication protocol, companion app API, dive log formats, and integration guides from openccr/docs.">
+  <meta name="description" content="openCCR API and protocol reference: rebus inter-board communication protocol, companion app API, dive log formats, and integration guides from openccr/docs.">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BM90FH107W"></script>
   <script>
@@ -27,6 +27,7 @@
       <ul class="nav__links" role="list">
         <li><a href="hardware.html">Hardware</a></li>
         <li><a href="software.html">Software</a></li>
+        <li><a href="/configurator">Configurator</a></li>
         <li><a href="api.html" class="active">API</a></li>
         <li><a href="community.html">Community</a></li>
         <li><a href="shop.html">Shop</a></li>
@@ -50,6 +51,7 @@
     <ul class="nav__mobile-links" role="list">
       <li><a href="hardware.html">Hardware</a></li>
       <li><a href="software.html">Software</a></li>
+      <li><a href="/configurator">Configurator</a></li>
       <li><a href="api.html" class="active">API</a></li>
       <li><a href="community.html">Community</a></li>
       <li><a href="shop.html">Shop</a></li>
@@ -70,16 +72,20 @@
       </div>
     </div>
 
-    <!-- CCRAN Protocol -->
-    <section class="section">
+    <!-- Page body: content + floating TOC -->
+    <div class="page-with-toc">
+      <div class="page-with-toc__content">
+
+    <!-- rebus Protocol -->
+    <section class="section" id="rebus-protocol">
       <div class="container">
         <div class="section-header">
           <p class="section-header__eyebrow">Inter-Board Communication</p>
-          <h2 class="section-header__title">CCRAN — CCR-Area-Network</h2>
+          <h2 class="section-header__title">rebus — rebreather bus</h2>
           <p class="section-header__subtitle">
-            CCRAN is not an industry standard — it is an openCCR community effort to define
+            rebus is a community effort to define
             a CAN-bus-based communication layer that makes rebreather electronics truly
-            interoperable. Any vendor can build a board that speaks CCRAN and plug it into
+            interoperable. Any vendor can build a board that speaks rebus and plug it into
             an openCCR system. The specification is developed openly in
             <a href="https://github.com/openccr/docs" target="_blank" rel="noopener noreferrer">openccr/docs</a>
             and governed by the community.
@@ -96,8 +102,8 @@
                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
               </svg>
             </div>
-            <h3 class="card__title">Why CCRAN?</h3>
-            <p class="card__body">Most rebreather electronics use proprietary internal buses, meaning sensors and displays from different builders are incompatible by default. CCRAN exists to change that. It is an openCCR community initiative to define a shared, open communication standard for rebreather modules — so that any CCRAN-compatible board, from any builder, can participate in the same system.</p>
+            <h3 class="card__title">Why rebus?</h3>
+            <p class="card__body">Most rebreather electronics use proprietary internal buses, meaning head controllers, HUDs and computers from different vendors are incompatible by default. rebus exists to change that. It is an openCCR community initiative to define a shared, open communication standard for rebreather modules and their communication — so that any rebus-compatible board, from any builder, can participate in the same system.</p>
           </div>
           <div class="card">
             <div class="card__icon" aria-hidden="true">
@@ -110,7 +116,7 @@
               </svg>
             </div>
             <h3 class="card__title">CAN Bus Foundation</h3>
-            <p class="card__body">CCRAN is built on CAN bus, a differential serial standard proven in automotive and industrial applications. CAN provides inherent noise immunity, multi-node addressing, and hardware-level error detection — properties that make it well-suited for safety-critical embedded systems. Precise electrical parameters such as baud rate, termination, and topology are being defined in the community specification.</p>
+            <p class="card__body">rebus is built on CAN bus, a differential serial standard proven in automotive and industrial applications. CAN provides inherent noise immunity, multi-node addressing, and hardware-level error detection — properties that make it well-suited for safety-critical embedded systems. Precise electrical parameters such as baud rate, termination, and topology are being defined in the community specification.</p>
           </div>
           <div class="card">
             <div class="card__icon" aria-hidden="true">
@@ -120,7 +126,7 @@
               </svg>
             </div>
             <h3 class="card__title">Open Message Registry</h3>
-            <p class="card__body">Above the physical layer, CCRAN defines a message format and an open registry of message types — the shared vocabulary boards use to exchange oxygen readings, control commands, alarm events, display updates, and diagnostic data. The registry is community-governed: any contributor can propose new message types for new device categories, with the full registry maintained in openccr/docs.</p>
+            <p class="card__body">Above the physical layer, rebus defines a message format and an open registry of message types — the shared vocabulary boards use to exchange oxygen readings, control commands, alarm events, display updates, and diagnostic data. The registry is community-governed: any contributor can propose new message types for new device categories, with the full registry maintained in openccr/docs.</p>
           </div>
           <div class="card">
             <div class="card__icon" aria-hidden="true">
@@ -130,7 +136,7 @@
               </svg>
             </div>
             <h3 class="card__title">Safety &amp; Fault Tolerance</h3>
-            <p class="card__body">Because rebreathers are life-support equipment, the CCRAN specification will define how the system behaves when nodes fail: how faults are detected, how alarms are broadcast across surviving nodes, and how the system degrades gracefully. These safety behaviours are as much a part of the standard as the frame format, and will be developed through community review and open discussion.</p>
+            <p class="card__body">Because rebreathers are life-support equipment, the rebus specification will define how the system behaves when nodes fail: how faults are detected, how alarms are broadcast across surviving nodes, and how the system degrades gracefully. These safety behaviours are as much a part of the standard as the frame format, and will be developed through community review and open discussion.</p>
           </div>
           <div class="card">
             <div class="card__icon" aria-hidden="true">
@@ -141,7 +147,7 @@
               </svg>
             </div>
             <h3 class="card__title">Build Your Own Compatible Hardware</h3>
-            <p class="card__body">Any hardware developer can build a CCRAN-compatible board. The specification will define exactly what a conforming node must implement: how to join the bus, how to register its capabilities, and how to exchange data with the rest of the system. Reference implementations and integration guides are maintained in openccr/docs to make third-party development straightforward.</p>
+            <p class="card__body">Any hardware developer can build a rebus-compatible board. The specification will define exactly what a conforming node must implement: how to join the bus, how to register its capabilities, and how to exchange data with the rest of the system. Reference implementations and integration guides are maintained in openccr/docs to make third-party development straightforward.</p>
           </div>
           <div class="card">
             <div class="card__icon" aria-hidden="true">
@@ -153,16 +159,16 @@
               </svg>
             </div>
             <h3 class="card__title">Work in Progress</h3>
-            <p class="card__body">CCRAN is actively being specified. The community is working through physical layer parameters, frame formats, addressing schemes, and the initial message type registry. If you build rebreather electronics or safety-critical embedded systems and want to help shape the standard, contributions are welcome in the openccr/docs repository.</p>
+            <p class="card__body">rebus is actively being specified. The community is working through physical layer parameters, frame formats, addressing schemes, and the initial message type registry. If you build rebreather electronics or safety-critical embedded systems and want to help shape the standard, contributions are welcome in the openccr/docs repository.</p>
           </div>
         </div>
         <a href="https://github.com/openccr/docs" target="_blank" rel="noopener noreferrer"
-           class="btn btn--primary">Read the CCRAN Specification in openccr/docs</a>
+           class="btn btn--primary">Read the rebus Specification in openccr/docs</a>
       </div>
     </section>
 
     <!-- Companion App API -->
-    <section class="section section--subtle">
+    <section class="section section--subtle" id="docs-reference">
       <div class="container">
         <div class="section-header">
           <p class="section-header__eyebrow">Repository — openccr/docs</p>
@@ -184,8 +190,8 @@
                 <line x1="16" y1="17" x2="8" y2="17"/>
               </svg>
             </div>
-            <h3 class="card__title">CCRAN Protocol Specification</h3>
-            <p class="card__body">Full normative specification for the CCR-Area-Network protocol. Covers physical layer, frame format, message type registry, addressing scheme, timing requirements, fault detection, and bus recovery procedures. Includes worked examples and oscilloscope waveform references.</p>
+            <h3 class="card__title">rebus Protocol Specification</h3>
+            <p class="card__body">Full normative specification for the rebus protocol. Covers physical layer, frame format, message type registry, addressing scheme, timing requirements, fault detection, and bus recovery procedures. Includes worked examples and oscilloscope waveform references.</p>
           </div>
           <div class="card">
             <div class="card__icon" aria-hidden="true">
@@ -217,7 +223,7 @@
     </section>
 
     <!-- Dive Log Format -->
-    <section class="section">
+    <section class="section" id="dive-log">
       <div class="container">
         <div class="section-header">
           <p class="section-header__eyebrow">Data Formats</p>
@@ -240,12 +246,26 @@
           </div>
           <div class="card">
             <h3 class="card__title">UDDF Export</h3>
-            <p class="card__body">Universal Dive Data Format export for compatibility with third-party dive log software (Subsurface, DiveLog, MacDive). Maps openCCR log fields to the UDDF 3.2.2 schema. PO₂ readings are stored in the <code>&lt;mixchange&gt;</code> and <code>&lt;setpoint&gt;</code> elements per the UDDF rebreather dive profile specification.</p>
+            <p class="card__body">Universal Dive Data Format export for compatibility with third-party dive log software (Subsurface, DiveLog, MacDive). Maps openCCR log fields to the UDDF 3.2.2 schema. </p>
             <div class="card__footer"><span class="badge badge--navy">.uddf</span></div>
           </div>
         </div>
       </div>
     </section>
+
+      </div><!-- end page-with-toc__content -->
+
+      <!-- Floating TOC -->
+      <aside class="page-toc" aria-label="Page contents">
+        <p class="page-toc__label">On this page</p>
+        <ul class="page-toc__list">
+          <li><a href="#rebus-protocol">rebus Protocol</a></li>
+          <li><a href="#docs-reference">Documentation</a></li>
+          <li><a href="#dive-log">Dive Log Schema</a></li>
+        </ul>
+      </aside>
+
+    </div><!-- end page-with-toc -->
 
   </main>
 

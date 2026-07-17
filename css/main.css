@@ -230,6 +230,11 @@ pre code {
   border: 0;
 }
 
+/* --- Scroll anchor offset for fixed nav --- */
+[id] {
+  scroll-margin-top: calc(var(--nav-height) + var(--space-4));
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
   h1 { font-size: var(--text-4xl); }

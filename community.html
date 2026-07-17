@@ -27,6 +27,7 @@
       <ul class="nav__links" role="list">
         <li><a href="hardware.html">Hardware</a></li>
         <li><a href="software.html">Software</a></li>
+        <li><a href="/configurator">Configurator</a></li>
         <li><a href="api.html">API</a></li>
         <li><a href="community.html" class="active">Community</a></li>
         <li><a href="shop.html">Shop</a></li>
@@ -50,6 +51,7 @@
     <ul class="nav__mobile-links" role="list">
       <li><a href="hardware.html">Hardware</a></li>
       <li><a href="software.html">Software</a></li>
+      <li><a href="/configurator">Configurator</a></li>
       <li><a href="api.html">API</a></li>
       <li><a href="community.html" class="active">Community</a></li>
       <li><a href="shop.html">Shop</a></li>
@@ -69,6 +71,10 @@
         </p>
       </div>
     </div>
+
+    <!-- Page body: content + floating TOC -->
+    <div class="page-with-toc">
+      <div class="page-with-toc__content">
 
     <!-- Safety Guidelines -->
     <section id="safety" class="section" style="padding-block: var(--space-8);">
@@ -96,7 +102,7 @@
     </section>
 
     <!-- GitHub Repositories -->
-    <section class="section">
+    <section class="section" id="repositories">
       <div class="container">
         <div class="section-header">
           <p class="section-header__eyebrow">GitHub</p>
@@ -132,7 +138,7 @@
               </svg>
             </div>
             <h3 class="card__title">openccr/firmware</h3>
-            <p class="card__body">Embedded C/C++ firmware built on Zephyr RTOS and the Nordic nRF SDK. Implements the PO₂ control loop, multi-cell voting with outlier rejection, closed-loop solenoid actuation, depth-based setpoint changeover, tiered alarm management, dive log recording, BLE connectivity, and the full CCRAN inter-board communication stack. Licensed under GPLv3.</p>
+            <p class="card__body">Embedded C/C++ firmware built on Zephyr RTOS and the Nordic nRF SDK. Implements the PO₂ control loop, multi-cell voting with outlier rejection, closed-loop solenoid actuation, depth-based setpoint changeover, tiered alarm management, Bühlmann ZHL-16C decompression algorithm, dive log recording, BLE connectivity, and the full rebus inter-board communication stack. Licensed under GPLv3.</p>
             <div class="card__footer">
               <a href="https://github.com/openccr/firmware" target="_blank" rel="noopener noreferrer"
                  class="btn btn--outline btn--sm">View on GitHub</a>
@@ -181,7 +187,7 @@
               </svg>
             </div>
             <h3 class="card__title">openccr/docs</h3>
-            <p class="card__body">Central documentation repository for the entire openCCR platform. Home of the CCRAN protocol specification — the community-driven CAN-bus standard for rebreather interoperability. Also contains the system architecture overview, hardware integration guide, firmware porting guide, companion app API reference, and FMEA safety analysis summaries. Licensed under CC BY 4.0.</p>
+            <p class="card__body">Central documentation repository for the entire openCCR platform. Home of the rebus protocol specification — the community-driven CAN-bus standard for rebreather interoperability. Also contains the system architecture overview, hardware integration guide, firmware porting guide, companion app API reference, and FMEA safety analysis summaries. Licensed under CC BY 4.0.</p>
             <div class="card__footer">
               <a href="https://github.com/openccr/docs" target="_blank" rel="noopener noreferrer"
                  class="btn btn--outline btn--sm">View on GitHub</a>
@@ -435,6 +441,24 @@
         </div>
       </div>
     </section>
+
+      </div><!-- end page-with-toc__content -->
+
+      <!-- Floating TOC -->
+      <aside class="page-toc" aria-label="Page contents">
+        <p class="page-toc__label">On this page</p>
+        <ul class="page-toc__list">
+          <li><a href="#safety">Safety Guidelines</a></li>
+          <li><a href="#repositories">Repositories</a></li>
+          <li><a href="#license">License</a></li>
+          <li><a href="#commercial">Commercial Partners</a></li>
+          <li><a href="#contributing">Contributing</a></li>
+          <li><a href="#cla">CLA</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </aside>
+
+    </div><!-- end page-with-toc -->
 
   </main>
 

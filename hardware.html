@@ -27,6 +27,7 @@
       <ul class="nav__links" role="list">
         <li><a href="hardware.html" class="active">Hardware</a></li>
         <li><a href="software.html">Software</a></li>
+        <li><a href="/configurator">Configurator</a></li>
         <li><a href="api.html">API</a></li>
         <li><a href="community.html">Community</a></li>
         <li><a href="shop.html">Shop</a></li>
@@ -50,6 +51,7 @@
     <ul class="nav__mobile-links" role="list">
       <li><a href="hardware.html" class="active">Hardware</a></li>
       <li><a href="software.html">Software</a></li>
+      <li><a href="/configurator">Configurator</a></li>
       <li><a href="api.html">API</a></li>
       <li><a href="community.html">Community</a></li>
       <li><a href="shop.html">Shop</a></li>
@@ -58,7 +60,7 @@
 
   <main class="page-content">
 
-    <!-- Page Hero -->
+    <!-- Page Hero — full width -->
     <div class="page-hero">
       <div class="container page-hero__inner">
         <p class="page-hero__eyebrow">Hardware</p>
@@ -70,7 +72,7 @@
       </div>
     </div>
 
-    <!-- Safety Warning -->
+    <!-- Safety Warning — full width -->
     <section class="section" style="padding-block: var(--space-8);">
       <div class="container">
         <div class="safety-warning">
@@ -92,243 +94,535 @@
       </div>
     </section>
 
-    <!-- Platform Vision -->
-    <section class="section section--subtle">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-header__eyebrow">Platform Vision</p>
-          <h2 class="section-header__title">A Fully Functional Electronic CCR</h2>
-          <p class="section-header__subtitle">
-            openCCR is designed from the ground up as a complete electronic closed circuit rebreather
-            platform. The hardware spans three interconnected domains: custom electronics boards for
-            oxygen sensing, loop control, depth measurement, and diver alerting; mechanical designs
-            for the rebreather body, pressure housings, and breathing loop interfaces; and embedded
-            firmware and a companion app to tie it all together into a coherent research platform.
-            Every domain is fully open, documented, and designed to evolve independently as the
-            community builds and refines it.
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- Page body: content + floating TOC -->
+    <div class="page-with-toc">
+      <div class="page-with-toc__content">
 
-    <!-- openccr/hardware repository -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-header__eyebrow">Repository — openccr/hardware</p>
-          <h2 class="section-header__title">Electronic Design Files</h2>
-          <p class="section-header__subtitle">
-            Complete KiCad project for all openCCR boards. Schematics, BOM, Gerbers,
-            and fabrication data in one repository. Licensed under CERN-OHL-S.
-          </p>
-        </div>
-        <div class="grid-3" style="margin-bottom: var(--space-8);">
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                <polyline points="14 2 14 8 20 8"/>
-              </svg>
+        <!-- ========== PLATFORM VISION ========== -->
+        <section class="section section--subtle" id="platform-vision">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-header__eyebrow">Platform Vision</p>
+              <h2 class="section-header__title">A Fully Functional Electronic CCR</h2>
+              <p class="section-header__subtitle">
+                openCCR is designed from the ground up as a complete electronic closed circuit rebreather
+                platform. The hardware spans three interconnected domains: custom electronics boards for
+                oxygen sensing, loop control, depth measurement, and diver alerting; mechanical designs
+                for the rebreather body, pressure housings, and breathing loop interfaces; and embedded
+                firmware and a companion app to tie it all together into a coherent research platform.
+                Every domain is fully open, documented, and designed to evolve independently as the
+                community builds and refines it.
+              </p>
             </div>
-            <h3 class="card__title">Schematics</h3>
-            <p class="card__body">Multi-sheet KiCad schematics covering all subsystems. Each sheet includes design-rationale annotations, net labels, and power-domain boundaries. Revision blocks track hardware versions across releases.</p>
           </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <line x1="8" y1="6" x2="21" y2="6"/>
-                <line x1="8" y1="12" x2="21" y2="12"/>
-                <line x1="8" y1="18" x2="21" y2="18"/>
-                <line x1="3" y1="6" x2="3.01" y2="6"/>
-                <line x1="3" y1="12" x2="3.01" y2="12"/>
-                <line x1="3" y1="18" x2="3.01" y2="18"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Bill of Materials</h3>
-            <p class="card__body">Fully annotated BOM with component values, tolerances, package types, and supplier part numbers for Digi-Key and Mouser. Includes BOM variants for different PO₂ cell connector types and regional availability.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M3 9h18M3 15h18M9 3v18"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Gerber &amp; Fabrication Data</h3>
-            <p class="card__body">Gerber files, drill maps, and pick-and-place centroid data for each board. Design rules checked against JLCPCB and PCBWay specifications for cost-effective prototyping and small-run production.</p>
-          </div>
-        </div>
-        <a href="https://github.com/openccr/hardware" target="_blank" rel="noopener noreferrer"
-           class="btn btn--primary">View openccr/hardware on GitHub</a>
-      </div>
-    </section>
+        </section>
 
-    <!-- Board Overview -->
-    <section class="section section--subtle">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-header__eyebrow">PCB Designs</p>
-          <h2 class="section-header__title">Platform Boards</h2>
-          <p class="section-header__subtitle">
-            Each board is a standalone module connected via CCRAN — the openCCR community's effort
-            to define a standard CAN-bus-based communication layer for rebreather electronics.
-            Unlike proprietary bus protocols, CCRAN is designed for interoperability: any vendor
-            can build a board that speaks CCRAN and it will integrate with the rest of the system.
-            Boards can be updated or replaced independently as the design evolves.
-          </p>
-        </div>
-        <div class="grid-3">
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <rect x="4" y="4" width="16" height="16" rx="2"/>
-                <rect x="9" y="9" width="6" height="6"/>
-                <line x1="9" y1="1" x2="9" y2="4"/>
-                <line x1="15" y1="1" x2="15" y2="4"/>
-                <line x1="9" y1="20" x2="9" y2="23"/>
-                <line x1="15" y1="20" x2="15" y2="23"/>
-                <line x1="20" y1="9" x2="23" y2="9"/>
-                <line x1="20" y1="14" x2="23" y2="14"/>
-                <line x1="1" y1="9" x2="4" y2="9"/>
-                <line x1="1" y1="14" x2="4" y2="14"/>
-              </svg>
+        <!-- ========== ELECTRONIC DESIGN FILES ========== -->
+        <section class="section" id="electronic-design-files">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-header__eyebrow">Repository — openccr/hardware</p>
+              <h2 class="section-header__title">Electronic Design Files</h2>
+              <p class="section-header__subtitle">
+                Complete KiCad project for all openCCR boards. Schematics, BOM, Gerbers,
+                and fabrication data in one repository. Licensed under CERN-OHL-S.
+              </p>
             </div>
-            <h3 class="card__title">Controller Board</h3>
-            <p class="card__body">Main system brain. Built around the proven, low-energy nRF52 or nRF54 microcontroller family. Hosts power management circuitry, CCRAN bus master logic, USB and BLE interfaces for companion app connectivity, and on-board flash for dive log storage. Orchestrates all other boards, runs the primary firmware stack, and can also execute onboard decompression calculations.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
+            <div class="grid-3" style="margin-bottom: var(--space-8);">
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Schematics</h3>
+                <p class="card__body">Multi-sheet KiCad schematics covering all subsystems. Each sheet includes design-rationale annotations, net labels, and power-domain boundaries. Revision blocks track hardware versions across releases.</p>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <line x1="8" y1="6" x2="21" y2="6"/>
+                    <line x1="8" y1="12" x2="21" y2="12"/>
+                    <line x1="8" y1="18" x2="21" y2="18"/>
+                    <line x1="3" y1="6" x2="3.01" y2="6"/>
+                    <line x1="3" y1="12" x2="3.01" y2="12"/>
+                    <line x1="3" y1="18" x2="3.01" y2="18"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Bill of Materials</h3>
+                <p class="card__body">Fully annotated BOM with component values, tolerances, package types, and supplier part numbers for Digi-Key and Mouser. Includes BOM variants for different PO₂ cell connector types and regional availability.</p>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M3 9h18M3 15h18M9 3v18"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Gerber &amp; Fabrication Data</h3>
+                <p class="card__body">Gerber files, drill maps, and pick-and-place centroid data for each board. Design rules checked against JLCPCB and PCBWay specifications for cost-effective prototyping and small-run production.</p>
+              </div>
             </div>
-            <h3 class="card__title">Sensor Conditioning Boards</h3>
-            <p class="card__body">Modular front-end boards available in multiple variants to accommodate different cell types and configurations. Variants support analog (galvanic) oxygen cells, digital solid-state oxygen cells, and CO₂ cells, in various combinations and channel counts. Each board outputs calibrated readings and cell health status over CCRAN.</p>
+            <a href="https://github.com/openccr/hardware" target="_blank" rel="noopener noreferrer"
+               class="btn btn--primary">View openccr/hardware on GitHub</a>
           </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Pressure Sensor Board</h3>
-            <p class="card__body">Measures ambient water pressure to determine current diving depth. Depth data feeds into the control loop for automatic setpoint changeover, decompression calculations, and dive log recording. Communicates sensor readings to the controller board over CCRAN.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Solenoid Driver Boards</h3>
-            <p class="card__body">Driver boards for oxygen addition valves. Multiple variants support different valve types, including standard on/off solenoids and proportional valves for precise gas flow control. Includes current-sense feedback for valve health monitoring and fly-back protection. Receives actuation commands over CCRAN.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <circle cx="12" cy="12" r="2"/>
-                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-              </svg>
-            </div>
-            <h3 class="card__title">HUD (Head-Up Display) Board</h3>
-            <p class="card__body">Diver-facing optical indicator module. Drives a tri-color LED array for PO₂ status, setpoint indication, and alarm signalling. Designed to be mounted in front of the diver's mask. Receives display commands over CCRAN.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                <line x1="8" y1="21" x2="16" y2="21"/>
-                <line x1="12" y1="17" x2="12" y2="21"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Display Boards</h3>
-            <p class="card__body">Support various display technologies including OLED, TFT, and e-Paper panels. Can serve as a detailed PO₂ monitor showing per-cell readings and trend data, or as a display for the onboard decompression dive computer. Receives data over CCRAN and renders dive-critical information in configurable layouts.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Alert Boards</h3>
-            <p class="card__body">Implement haptic or visual feedback for critical events, designed to alert both the diver and their dive buddy when dangerous conditions arise. Multiple form factors in development for wrist-mounted, loop-mounted, and buddy-alert configurations. Receives alarm events over CCRAN.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <circle cx="5" cy="12" r="1"/>
-                <circle cx="12" cy="12" r="1"/>
-                <circle cx="19" cy="12" r="1"/>
-              </svg>
-            </div>
-            <h3 class="card__title">Many More…</h3>
-            <p class="card__body">The CCRAN bus architecture is designed to be extensible. Future and community-developed boards can join the bus by implementing the CCRAN node specification — enabling new sensor types, display formats, alerting mechanisms, and integrations without modifying the core system.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- openccr/mechanics repository -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-header__eyebrow">Repository — openccr/mechanics</p>
-          <h2 class="section-header__title">Mechanical Design Files</h2>
-          <p class="section-header__subtitle">
-            STEP, STL, and 2D drawing files for all physical components of the openCCR platform.
-            Designed for FDM/SLS 3D printing and CNC machining. Licensed under CERN-OHL-S.
-          </p>
-        </div>
-        <div class="grid-3" style="margin-bottom: var(--space-8);">
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-              </svg>
+        <!-- ========== PLATFORM BOARDS OVERVIEW ========== -->
+        <section class="section section--subtle" id="platform-boards">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-header__eyebrow">PCB Designs</p>
+              <h2 class="section-header__title">Platform Boards</h2>
+              <p class="section-header__subtitle">
+                Each board is a standalone module connected via rebus — the openCCR community's effort
+                to define a standard CAN-bus-based communication layer for rebreather electronics.
+                Unlike proprietary bus protocols, rebus is designed for interoperability: any vendor
+                can build a board that speaks rebus and it will integrate with the rest of the system.
+                Boards can be updated or replaced independently as the design evolves.
+              </p>
             </div>
-            <h3 class="card__title">3D CAD Models (STEP &amp; STL)</h3>
-            <p class="card__body">Parametric STEP files for electronics pressure housing, sensor mounting pods, scrubber canister interfaces, and breathing loop connectors. STL exports for direct 3D printing.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/>
-              </svg>
+            <div class="grid-3">
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2"/>
+                    <rect x="9" y="9" width="6" height="6"/>
+                    <line x1="9" y1="1" x2="9" y2="4"/>
+                    <line x1="15" y1="1" x2="15" y2="4"/>
+                    <line x1="9" y1="20" x2="9" y2="23"/>
+                    <line x1="15" y1="20" x2="15" y2="23"/>
+                    <line x1="20" y1="9" x2="23" y2="9"/>
+                    <line x1="20" y1="14" x2="23" y2="14"/>
+                    <line x1="1" y1="9" x2="4" y2="9"/>
+                    <line x1="1" y1="14" x2="4" y2="14"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Controller Board</h3>
+                <p class="card__body">Main system brain. Built around the proven, low-energy nRF52 or nRF54 microcontroller family. Hosts power management circuitry, rebus master logic, USB and BLE interfaces for companion app connectivity, and on-board flash for dive log storage.</p>
+                <div class="card__footer"><a href="#controller-board">Details →</a></div>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Sensor Conditioning Boards</h3>
+                <p class="card__body">Modular front-end boards available in multiple variants to accommodate different cell types. Variants support analog galvanic O₂ cells, digital solid-state O₂ cells, and CO₂ cells, in various combinations and channel counts.</p>
+                <div class="card__footer"><a href="#sensor-conditioning">Details →</a></div>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Pressure Sensor Board</h3>
+                <p class="card__body">Measures ambient water pressure to determine current diving depth. Depth data feeds into the control loop for automatic setpoint changeover, decompression calculations, and dive log recording.</p>
+                <div class="card__footer"><a href="#pressure-sensor">Details →</a></div>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Solenoid Driver Boards</h3>
+                <p class="card__body">Driver boards for oxygen addition valves. Multiple variants support on/off solenoids and proportional valves and can include current-sense feedback for valve health monitoring and flyback protection.</p>
+                <div class="card__footer"><a href="#solenoid-driver">Details →</a></div>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="2"/>
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">HUD Boards</h3>
+                <p class="card__body">DSV-mounted multi-color LED array for PO₂ status, setpoint indication, and alarm signalling. Provides the diver with immediate glanceable feedback without requiring eyes-off interaction.</p>
+                <div class="card__footer"><a href="#hud-board">Details →</a></div>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Display Boards</h3>
+                <p class="card__body">Full graphical displays in OLED, TFT, and e-Paper variants. Shows per-cell PO₂ readings, depth, decompression data, and active alarms in configurable layouts.</p>
+                <div class="card__footer"><a href="#display-boards">Details →</a></div>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Alert Boards</h3>
+                <p class="card__body">Haptic and visual alerting modules for both diver and buddy notification. Wrist-mount, loop-mount, DSV-mount and standalone buddy-alert form factors planned. </p>
+                <div class="card__footer"><a href="#alert-boards">Details →</a></div>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <circle cx="5" cy="12" r="1"/>
+                    <circle cx="12" cy="12" r="1"/>
+                    <circle cx="19" cy="12" r="1"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Many More…</h3>
+                <p class="card__body">The rebus bus architecture is designed to be extensible. Future and community-developed boards can join the bus by implementing the rebus node specification — enabling new sensor types, display formats, alerting mechanisms, and integrations without modifying the core system.</p>
+              </div>
             </div>
-            <h3 class="card__title">2D Technical Drawings</h3>
-            <p class="card__body">DXF and PDF drawings with full GD&amp;T annotations, O-ring groove specifications to AS568 standard, and machining tolerances. Each drawing includes a revision block and material callout (6061-T6 aluminium, Delrin, or PETG depending on application).</p>
           </div>
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
+        </section>
+
+        <!-- ========== CONTROLLER BOARD ========== -->
+        <section class="section" id="controller-board">
+          <div class="container">
+            <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+              <p class="section-header__eyebrow">Electronics · rebus Master</p>
+              <h2 class="section-header__title">Controller Board</h2>
+              <p class="section-header__subtitle" style="margin-inline: 0; max-width: 100%;">
+                The brain of the openCCR system. Built around the Nordic nRF52, nRF53, and nRF54 microcontroller
+                families, the controller board hosts all core system logic: power management, rebus bus
+                master, Bluetooth Low Energy and USB connectivity for the companion app. 
+                It runs the primary firmware stack including PO₂ control loops, alarm management, and 
+                — optionally — onboard decompression algorithm execution.
+              </p>
             </div>
-            <h3 class="card__title">Pressure &amp; Assembly Notes</h3>
-            <p class="card__body">Each enclosure design includes assembly notes with torque specifications, O-ring lubrication requirements, and an enclosure pressure-test procedure.</p>
+            <div class="grid-2" style="margin-bottom: var(--space-8);">
+              <div>
+                <h3 style="font-size: var(--text-lg); color: var(--color-navy); margin-bottom: var(--space-4);">Key Functions</h3>
+                <ul style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.8; padding-left: var(--space-6);">
+                  <li>Nordic nRF52840 or nRF5340 MCU — ultra-low power with integrated BLE radio</li>
+                  <li>rebus bus master: arbitrates and coordinates all peripheral boards over CAN</li>
+                  <li>Regulated power supply rails for 3.3 V logic and 5 V bus; Li-ion battery monitoring and charging</li>
+                  <li>Bluetooth Low Energy for companion app connectivity: pairing, config, log export, OTA firmware updates</li>
+                  <li>Optional: USB interface for wired log transfer and firmware flashing during development</li>
+                  <li>Hardware watchdog: forces solenoid de-energisation on firmware hang or bus timeout</li>
+                  <li>Optional: onboard Bühlmann ZHL-16C decompression runtime with configurable GF settings</li>
+                </ul>
+              </div>
+              <div class="placeholder-block">
+                <h3>Schematic &amp; Layout</h3>
+                <p>KiCad schematic and PCB layout coming soon. Will include controller core, power management, and interface sub-sheets.</p>
+              </div>
+            </div>
+            <span class="badge badge--ocean">In Development</span>
           </div>
-        </div>
-        <a href="https://github.com/openccr/mechanics" target="_blank" rel="noopener noreferrer"
-           class="btn btn--primary">View openccr/mechanics on GitHub</a>
-      </div>
-    </section>
+        </section>
+
+        <!-- ========== SENSOR CONDITIONING BOARDS ========== -->
+        <section class="section section--subtle" id="sensor-conditioning">
+          <div class="container">
+            <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+              <p class="section-header__eyebrow">Electronics · Sensor Interface</p>
+              <h2 class="section-header__title">Sensor Conditioning Boards</h2>
+              <p class="section-header__subtitle" style="margin-inline: 0; max-width: 100%;">
+                Modular front-end boards that interface directly with oxygen and CO₂ sensors. Available
+                in multiple variants to accommodate the range of cell types and channel counts used in
+                CCR designs. Each board handles signal conditioning, analog-to-digital conversion, cell
+                health scoring, and broadcasts calibrated sensor readings to the controller board over
+                rebus.
+              </p>
+            </div>
+            <div class="grid-2" style="margin-bottom: var(--space-8);">
+              <div>
+                <h3 style="font-size: var(--text-lg); color: var(--color-navy); margin-bottom: var(--space-4);">Variants &amp; Functions</h3>
+                <ul style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.8; padding-left: var(--space-6);">
+                  <li><strong style="color: var(--color-text);">Galvanic O₂ variant</strong> — high-gain transimpedance amplifier for multiple analog cells simultaneously; individual cell millivolt readout with low-noise ADC</li>
+                  <li><strong style="color: var(--color-text);">Digital O₂ variant</strong> — Digital interface for solid-state O₂ cells</li>
+                  <li><strong style="color: var(--color-text);">CO₂ variant</strong> — CO₂ sensor interface with temperature compensation for scrubber monitoring</li>
+                  <li>Continuous cell health scoring: drift detection, noise floor monitoring, and outlier flagging; degraded cells excluded from the voted PO₂</li>
+                  <li>Calibration constants stored in on-board EEPROM; written by the companion app, retained across power cycles</li>
+                  <li>Multiple cell connector options covering common O₂ cell body standards and thread types</li>
+                </ul>
+              </div>
+              <div class="placeholder-block">
+                <h3>Variant Design Files</h3>
+                <p>Schematics for galvanic, digital, and CO₂ variants in design. BOM and Gerbers will be published per variant when ready.</p>
+              </div>
+            </div>
+            <span class="badge badge--ocean">In Development</span>
+          </div>
+        </section>
+
+        <!-- ========== PRESSURE SENSOR BOARD ========== -->
+        <section class="section" id="pressure-sensor">
+          <div class="container">
+            <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+              <p class="section-header__eyebrow">Electronics · Depth</p>
+              <h2 class="section-header__title">Pressure Sensor Board</h2>
+              <p class="section-header__subtitle" style="margin-inline: 0; max-width: 100%;">
+                Measures the ambient water pressure to determine the diver's current depth. Depth data
+                is broadcast over rebus for use by the PO₂ control loop (setpoint changeover), the
+                decompression algorithm, and dive log recording. The board also provides a calibrated
+                water temperature reading for breathing loop thermal monitoring.
+              </p>
+            </div>
+            <div class="grid-2" style="margin-bottom: var(--space-8);">
+              <div>
+                <h3 style="font-size: var(--text-lg); color: var(--color-navy); margin-bottom: var(--space-4);">Key Functions</h3>
+                <ul style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.8; padding-left: var(--space-6);">
+                  <li>Absolute ambient pressure sensor</li>
+                  <li>Temperature-compensated pressure readings; compensation coefficients stored on-board</li>
+                  <li>Depth calculation performed on the board; broadcast as calibrated depth in metres over rebus</li>
+                  <li>Secondary output: water temperature reading for loop thermal data</li>
+                  <li>Feeds automatic setpoint changeover logic: low setpoint on descent, high setpoint at bottom depth</li>
+                  <li>Depth and temperature written to every dive log sample record</li>
+                  <li>Pressure-rated housing interface: O-ring face-seal connector to electronics enclosure</li>
+                </ul>
+              </div>
+              <div class="placeholder-block">
+                <h3>Schematic &amp; Layout</h3>
+                <p>Pressure sensor interface schematic in early draft. Sensor selection and connector interface to be finalised based on depth rating requirements.</p>
+              </div>
+            </div>
+            <span class="badge badge--ocean">In Development</span>
+          </div>
+        </section>
+
+        <!-- ========== SOLENOID DRIVER BOARDS ========== -->
+        <section class="section section--subtle" id="solenoid-driver">
+          <div class="container">
+            <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+              <p class="section-header__eyebrow">Electronics · Gas Addition</p>
+              <h2 class="section-header__title">Solenoid Driver Boards</h2>
+              <p class="section-header__subtitle" style="margin-inline: 0; max-width: 100%;">
+                Controls the oxygen addition valve that maintains the breathing loop PO₂ setpoint.
+                Receives actuation commands from the controller board over rebus and drives the solenoid
+                via a protected high-side switch. Multiple variants cover standard on/off solenoids and
+                proportional valves for precise gas flow control. Current-sense feedback provides valve
+                health monitoring and fail-safe protection against stuck-open or stuck-closed faults.
+              </p>
+            </div>
+            <div class="grid-2" style="margin-bottom: var(--space-8);">
+              <div>
+                <h3 style="font-size: var(--text-lg); color: var(--color-navy); margin-bottom: var(--space-4);">Variants &amp; Functions</h3>
+                <ul style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.8; padding-left: var(--space-6);">
+                  <li><strong style="color: var(--color-text);">On/off variant</strong> — high-side MOSFET switch for standard normally-closed solenoid valves; suitable for most commercial O₂ addition valves</li>
+                  <li><strong style="color: var(--color-text);">Proportional variant</strong> — PWM-controlled driver for proportional solenoids enabling modulated gas flow; reduces loop PO₂ oscillation at setpoint</li>
+                  <li>Flyback diode and TVS protection for inductive load switching transients</li>
+                  <li>Inline current sensing: detects stalled, open-circuit, and short-circuit valve conditions</li>
+                  <li>Valve health status reported back over rebus and used to generate alarms</li>
+                  <li>Hardware interlock: solenoid de-energised on rebus communication timeout (independent watchdog)</li>
+                  <li>Configurable maximum injection duration limit as firmware-enforced safety ceiling</li>
+                </ul>
+              </div>
+              <div class="placeholder-block">
+                <h3>Driver Variant Files</h3>
+                <p>On/off and proportional driver schematics under development. Valve connector type and housing interface to be defined alongside the mechanics repository.</p>
+              </div>
+            </div>
+            <span class="badge badge--ocean">In Development</span>
+          </div>
+        </section>
+
+        <!-- ========== HUD BOARD ========== -->
+        <section class="section" id="hud-board">
+          <div class="container">
+            <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+              <p class="section-header__eyebrow">Electronics · Diver Feedback</p>
+              <h2 class="section-header__title">Head-Up Display Board</h2>
+              <p class="section-header__subtitle" style="margin-inline: 0; max-width: 100%;">
+                A DSV-mounted LED indicator module providing the diver with immediate, glanceable PO₂
+                status without requiring eyes-off-the-environment interaction. The HUD drives a multi-color
+                LED array whose color and blink pattern encode the current PO₂ state, active setpoint,
+                and active alarms. Receives display commands over rebus and operates independently of
+                any full display board.
+              </p>
+            </div>
+            <div class="grid-2" style="margin-bottom: var(--space-8);">
+              <div>
+                <h3 style="font-size: var(--text-lg); color: var(--color-navy); margin-bottom: var(--space-4);">Key Functions</h3>
+                <ul style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.8; padding-left: var(--space-6);">
+                  <li>Multi-color LED array; color encoding: green = PO₂ in range, yellow = caution, red = alarm condition</li>
+                  <li>Configurable brightness via rebus command; intended for adaptation to varying ambient light underwater</li>
+                  <li>PO₂ status indication: in-range, approaching high threshold, high, approaching low threshold, low</li>
+                  <li>Active setpoint indicator: slow blink pattern differentiates low vs high setpoint</li>
+                  <li>Alarm flash patterns per tier: advisory (slow), warning (medium), critical (rapid continuous)</li>
+                  <li>Compact PCB form factor for clip-mount attachment inside the diver's mask skirt</li>
+                  <li>Potted or conformal-coated for water immersion at depth</li>
+                </ul>
+              </div>
+              <div class="placeholder-block">
+                <h3>PCB Layout &amp; Mechanical</h3>
+                <p>Miniaturised PCB form factor under design. LED array placement and mask-mount bracket to be defined alongside the mechanics repository.</p>
+              </div>
+            </div>
+            <span class="badge badge--ocean">In Development</span>
+          </div>
+        </section>
+
+        <!-- ========== DISPLAY BOARDS ========== -->
+        <section class="section section--subtle" id="display-boards">
+          <div class="container">
+            <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+              <p class="section-header__eyebrow">Electronics · Full Display</p>
+              <h2 class="section-header__title">Display Boards</h2>
+              <p class="section-header__subtitle" style="margin-inline: 0; max-width: 100%;">
+                Full graphical display boards for detailed dive data. Designed to support multiple display
+                technologies via swappable display modules, so the same carrier board can drive OLED,
+                TFT color, or e-Paper panels depending on the build requirements. Shows per-cell PO₂
+                readings, voted PO₂ trend, depth, temperature, setpoint, decompression information, and
+                active alarms in configurable screen layouts.
+              </p>
+            </div>
+            <div class="grid-2" style="margin-bottom: var(--space-8);">
+              <div>
+                <h3 style="font-size: var(--text-lg); color: var(--color-navy); margin-bottom: var(--space-4);">Variants &amp; Functions</h3>
+                <ul style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.8; padding-left: var(--space-6);">
+                  <li><strong style="color: var(--color-text);">OLED variant</strong> — high-contrast monochrome display; excellent visibility at depth; moderate power draw; suited to primary wrist or loop-mount units</li>
+                  <li><strong style="color: var(--color-text);">TFT color variant</strong> — full color for coded PO₂ trend graphs, per-cell comparison views, and decompression ceiling visualisation</li>
+                  <li><strong style="color: var(--color-text);">e-Paper variant</strong> — ultra-low power; updates between data changes only; suited for wrist-mount secondary display with infrequent reads</li>
+                  <li>Data received over rebus: voted PO₂, per-cell readings, depth, setpoint, active alarms, deco stops and ceilings</li>
+                  <li>Configurable display layouts: dive computer mode, PO₂ monitor mode, decompression mode</li>
+                  <li>Button or touch interface for layout switching depending on form factor</li>
+                  <li>Conformal-coated or encapsulated carrier board; display module behind flat pressure window</li>
+                </ul>
+              </div>
+              <div class="placeholder-block">
+                <h3>Display Variant Files</h3>
+                <p>Carrier board schematic and per-variant display connector sub-sheets in design. Layout mockups will be published in the visual configurator.</p>
+              </div>
+            </div>
+            <span class="badge badge--ocean">In Development</span>
+          </div>
+        </section>
+
+        <!-- ========== ALERT BOARDS ========== -->
+        <section class="section" id="alert-boards">
+          <div class="container">
+            <div class="section-header" style="text-align: left; margin-bottom: var(--space-8);">
+              <p class="section-header__eyebrow">Electronics · Alerting</p>
+              <h2 class="section-header__title">Alert Boards</h2>
+              <p class="section-header__subtitle" style="margin-inline: 0; max-width: 100%;">
+                Alerting modules providing tactile and visual feedback for critical dive events, designed
+                to catch the diver's attention even in high-workload situations. 
+              </p>
+            </div>
+            <div class="grid-2" style="margin-bottom: var(--space-8);">
+              <div>
+                <h3 style="font-size: var(--text-lg); color: var(--color-navy); margin-bottom: var(--space-4);">Variants &amp; Functions</h3>
+                <ul style="color: var(--color-text-muted); font-size: var(--text-sm); line-height: 1.8; padding-left: var(--space-6);">
+                  <li><strong style="color: var(--color-text);">Wrist alert variant</strong> — haptic motor with tiered vibration patterns per alarm severity (advisory, warning, critical)</li>
+                  <li><strong style="color: var(--color-text);">Canister-mount strobe</strong> — high-intensity LED strobe visible to the buddy diver; waterproof and depth-rated</li>
+                </ul>
+              </div>
+              <div class="placeholder-block">
+                <h3>Form Factor &amp; Schematics</h3>
+                <p>Alert board variants in early concept stage. Haptic driver and strobe LED circuit design pending. Mechanical housing to be designed with partner organisations.</p>
+              </div>
+            </div>
+            <span class="badge badge--cyan">Early Concept</span>
+          </div>
+        </section>
+
+        <!-- ========== MECHANICAL DESIGN FILES ========== -->
+        <section class="section section--subtle" id="mechanical-design-files">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-header__eyebrow">Repository — openccr/mechanics</p>
+              <h2 class="section-header__title">Mechanical Design Files</h2>
+              <p class="section-header__subtitle">
+                STEP, STL, and 2D drawing files for all physical components of the openCCR platform.
+                Designed for FDM/SLS 3D printing and CNC machining. Licensed under CERN-OHL-S.
+              </p>
+            </div>
+            <div class="grid-3" style="margin-bottom: var(--space-8);">
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">3D CAD Models (STEP &amp; STL)</h3>
+                <p class="card__body">Parametric STEP files for electronics pressure housing, sensor mounting pods, scrubber canister interfaces, and breathing loop connectors. STL exports for direct 3D printing.</p>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">2D Technical Drawings</h3>
+                <p class="card__body">DXF and PDF drawings with full GD&amp;T annotations, O-ring groove specifications to AS568 standard, and machining tolerances. Each drawing includes a revision block and material callout (6061-T6 aluminium, Delrin, or PETG depending on application).</p>
+              </div>
+              <div class="card">
+                <div class="card__icon" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                </div>
+                <h3 class="card__title">Pressure &amp; Assembly Notes</h3>
+                <p class="card__body">Each enclosure design includes assembly notes with torque specifications, O-ring lubrication requirements, and an enclosure pressure-test procedure.</p>
+              </div>
+            </div>
+            <a href="https://github.com/openccr/mechanics" target="_blank" rel="noopener noreferrer"
+               class="btn btn--primary">View openccr/mechanics on GitHub</a>
+          </div>
+        </section>
+
+        <!-- ========== CONFIGURATOR CTA ========== -->
+        <section class="section" id="configurator">
+          <div class="container">
+            <div class="section-header">
+              <p class="section-header__eyebrow">Tools</p>
+              <h2 class="section-header__title">Plan Your Build Visually</h2>
+              <p class="section-header__subtitle">
+                Use the interactive configurator to drag and arrange openCCR boards and
+                components, explore module combinations, and map out your build before
+                you order any parts.
+              </p>
+            </div>
+            <a href="/configurator" class="btn btn--primary btn--lg">Open Configurator</a>
+          </div>
+        </section>
+
+      </div><!-- end page-with-toc__content -->
+
+      <!-- Floating TOC -->
+      <aside class="page-toc" aria-label="Page contents">
+        <p class="page-toc__label">On this page</p>
+        <ul class="page-toc__list">
+          <li><a href="#platform-vision">Platform Vision</a></li>
+          <li><a href="#electronic-design-files">Electronic Design Files</a></li>
+          <li><a href="#platform-boards">Platform Boards</a></li>
+          <li><a href="#controller-board">Controller Board</a></li>
+          <li><a href="#sensor-conditioning">Sensor Conditioning</a></li>
+          <li><a href="#pressure-sensor">Pressure Sensor</a></li>
+          <li><a href="#solenoid-driver">Solenoid Driver</a></li>
+          <li><a href="#hud-board">HUD Board</a></li>
+          <li><a href="#display-boards">Display Boards</a></li>
+          <li><a href="#alert-boards">Alert Boards</a></li>
+          <li><a href="#mechanical-design-files">Mechanical Design</a></li>
+          <li><a href="#configurator">Configurator</a></li>
+        </ul>
+      </aside>
+
+    </div><!-- end page-with-toc -->
 
   </main>
 
